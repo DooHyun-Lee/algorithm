@@ -7,13 +7,13 @@ using namespace std;
 
 
 int N, M, V;
-vector<int> a[1001];	// 하나의 정점과 연결된 다른 정점들 저장
-int cd[1001];	// dfs visited
-int cb[1001];  // bfs visited
+vector<int> a[1001];	// 크기가 1001인 int 형 벡터의 배열 생성
+int d_flag[1001];	// dfs visited
+int b_flag[1001];  // bfs visited
 
 void dfs(int x) {
-	if (cd[x]) return;
-	cd[x] = true;
+	if (d_flag[x]) return;
+	d_flag[x] = true;
 	cout << x << ' ';
 	for (int i = 0; i < a[x].size(); i++) {
 		int y = a[x][i];
@@ -24,16 +24,16 @@ void dfs(int x) {
 void bfs(int start) {
 	queue<int> q;
 	q.push(start);
-	cb[start] = true;
+	b_flag[start] = true;
 	while (!q.empty()) {
 		int x = q.front();
 		q.pop();
 		cout << x << ' ';
 		for (int i = 0; i < a[x].size(); i++) {
 			int y = a[x][i];
-			if (!cb[y]) {
+			if (!b_flag[y]) {
 				q.push(y);
-				cb[y] = true;
+				b_flag[y] = true;
 			}
 		}
 	}

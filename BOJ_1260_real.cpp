@@ -7,8 +7,8 @@ using namespace std;
 
 
 int N, M, V;
-vector<int> a[1001];	// 크기가 1001인 int 형 벡터의 배열 생성
-int d_flag[1001];	// dfs visited
+vector<int> a[1001];	// 크기가 1001인 int 형 벡터의 배열 생성 a[i] 에 i에 대한 정보 저장
+int d_flag[1001];	// 전역 변수 선언 되어 0으로 초기화 (false)
 int b_flag[1001];  // bfs visited
 
 void dfs(int x) {

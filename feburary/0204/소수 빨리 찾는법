@@ -1,0 +1,11 @@
+판별이 필요한 최대 수를 n이라고 할 때 
+
+에라토스테네스의 체 방법 사용
+for(int i=2;i*i<=n;i++){
+  if(arr[i])
+  for(int j=i*2;j<=n;j+=i){
+    arr[j] = false;
+  }
+}
+
+위와 같이 arr에 소수정보를 caching 해놓는다

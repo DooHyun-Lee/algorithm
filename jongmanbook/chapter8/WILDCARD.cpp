@@ -8,7 +8,7 @@
 
     int cache[101][101];
 
-    bool match(string wild,string str,int w,int s){
+    bool match(string wild,string str,int w,int s){     // wild 의 index w , str 의 index s 에서 출발하여 wildcard 성립여부
         int ret = cache[w][s];
         if(ret != -1)   return ret;
         while(w<wild.size() && s<str.size() && (wild[w] == str[s] || wild[w] == '?')){
